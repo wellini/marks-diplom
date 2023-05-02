@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+<nav th:fragment="wardrobe-item (item)" class="card" style="width: 18rem;display: inline-block">
+    <div class="card-body">
+        <h5 class="card-title" th:text="${item.name}"></h5>
+        <div class="badge text-bg-primary" th:text="${item.category.nameRU_ru}"></div>
+    </div>
+</nav>
+</body>
+</html>

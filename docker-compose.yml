@@ -1,0 +1,21 @@
+version: '3.9'
+
+services:
+
+  postgres:
+    container_name: ps_postgres
+    image: docker.io/postgres:11-alpine
+    ports:
+      - "49352:5432"
+    volumes:
+      - pg_volume:/var/database/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ps
+      PGDATA: /var/database/data
+    logging:
+      driver: local
+
+volumes:
+  pg_volume: {}
